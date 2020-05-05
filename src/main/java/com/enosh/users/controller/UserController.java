@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 // http://localhost:8080/users/
 
-// Enosh dkjashakshd
+// Enosh 78788787 yo
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")
