@@ -8,6 +8,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
 // http://localhost:8080/users/
 
 @CrossOrigin(origins = "*")
@@ -27,6 +31,12 @@ public class UserController {
         return repository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.ok(null));
+    }
+
+    // http://localhost:8080/users/get/all
+    @GetMapping({"/get/all", "/get/", "/get"})
+    public ResponseEntity<Iterable<User>> getAll(){
+        return ResponseEntity.ok(repository.findAll());
     }
 
     // http://localhost:8080/users/create
